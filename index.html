@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>កម្មវិធីប្រឡងអានភាសាអង់គ្លេស (បញ្ជាដោយសម្លេង)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Koulen&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Khmer', 'Inter', sans-serif;
+        }
+        /* Koulen for main headers and buttons as per original example, applied via font-koulen utility class */
+        .font-koulen {
+            font-family: 'Koulen', 'Noto Sans Khmer', sans-serif;
+        }
+        .result-word {
+            padding: 4px 6px;
+            border-radius: 6px;
+            font-weight: 600; /* semibold */
+            transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            margin: 2px 2px 2px 0; 
+            line-height: 1.8; 
+        }
+        .correct {
+            color: #16a34a; /* Tailwind green-600 */
+            background-color: #dcfce7; /* Tailwind green-100 */
+        }
+        .incorrect {
+            color: #dc2626; /* Tailwind red-600 */
+            background-color: #fee2e2; /* Tailwind red-100 */
+            text-decoration: line-through;
+            text-decoration-color: #ef4444; /* Tailwind red-500 */
+        }
+        .pending {
+             background-color: #f3f4f6; /* Tailwind gray-100 */
+             color: #4b5563; /* Tailwind gray-600 */
+        }
+        .listening-indicator {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        /* Style for word being spoken by TTS */
+        .speaking {
+            /* background-color: #ede9fe !important; /* Tailwind violet-100 */
+            /* color: #5b21b6 !important; /* Tailwind violet-700 */
+            /* box-shadow: 0 0 0 2px #8b5cf6; /* Tailwind violet-500 ring */
+            /* transform: scale(1.05); */
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
